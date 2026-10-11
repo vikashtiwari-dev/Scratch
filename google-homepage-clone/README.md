@@ -1,0 +1,1 @@
+Here i present to you my week 1 project solution that fulfills nearly all of the requiemnt for the given pdf . i know some of the features given in the pdf are missing bcz i am still left to learn those or i have learn them nut not properly able to integrate them .
