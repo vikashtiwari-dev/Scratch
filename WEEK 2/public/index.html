@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Todos</h1>
+    </header>
+
+    <main>
+      <div id="error-banner" class="error-banner" role="alert" hidden>
+        <span id="error-message"></span>
+        <button type="button" id="dismiss-error" class="close-btn" aria-label="Dismiss error">&times;</button>
+      </div>
+
+      <form id="todo-form" class="todo-form">
+        <label for="todo-input" class="sr-only">Task description</label>
+        <input 
+          type="text" 
+          id="todo-input" 
+          placeholder="What needs to be done?" 
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="add-btn" class="btn primary-btn">Add</button>
+      </form>
+
+      <div class="status-bar">
+        <span id="remaining-count" class="remaining-count">0 items left</span>
+
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+      </div>
+
+      <div id="loading-state" class="loading-state" role="status" hidden>
+        <span class="spinner"></span>
+        <span id="loading-text">Loading...</span>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-label="Todos list"></ul>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p id="empty-text">No tasks yet. Add one above to get started!</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Tasks are kept in server memory and will reset when the server restarts.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
